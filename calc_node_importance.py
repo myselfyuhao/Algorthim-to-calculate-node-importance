@@ -19,7 +19,7 @@ create a mian function to end of file which include such code:
 
     #set the path and filename to read a file
     path = r'C:\Users\qyh\Desktop\code for Nimp_python'
-    filename = 'withourE.txt'
+    filename = 'ErdosNetwork.txt'
 
     #replace node labels with consistent labels
     edges, total_node = replace_network_line(path, filename)
@@ -153,12 +153,12 @@ def get_node_score(edges, total_node):
     '''
     get the score for all nodes
     ----
-    参数
+    Parameter
     %edges：edge list data, where the node label is consecutive
     %total_node: the total number of nodes
 
     ----
-    返回
+    Return
     %node_weight: list to store the scroes for nodes 
     %initial_node_degree: list to store the scores for nodes
     '''
