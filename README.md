@@ -20,7 +20,7 @@ create a mian function to include such code:
 
     #set the path and filename to read a file
     path = r'C:\Users\qyh\Desktop\code for Nimp_python'
-    filename = 'withourE.txt'
+    filename = 'ErodeNetwork.txt'
 
     #replace node labels with consistent labels
     edges, total_node = replace_network_line(path, filename)
