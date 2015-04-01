@@ -127,11 +127,20 @@ def replace_network(path, filename):
             print "error to load an edge"
     file.close()
 
-    ##replace the edge list
-    replace_edgelist = []
+    ##replace the edge list, ensure the edges are unique and nodes are unique 
+    unique_edges = set()
     for edge in edge_list:
-        replace_edgelist.append([node_dict[edge[0]],node_dict[edge[1]]])
-    return replace_edgelist,total_node
+        if node_dict[edge[0]]<node_dict[edge[1]]:
+            unique_edges.add((node_dict[edge[0]],node_dict[edge[1]]))
+        else:
+            if node_dict[edge[0]]>node_dict[edge[1]]:
+                unique_edges.add((node_dict[edge[1]],node_dict[edge[0]]))                
+    unique_edges = list(unique_edges)
+    replace_edges = []
+    for edge in unique_edges:
+        replace_edges.append(list(edge))
+    return replace_edges, total_node
+
 
 ##find all locations for an element in a list
 def find_all_index(arr,item):
